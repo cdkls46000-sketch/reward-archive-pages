@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f766e" />
+  <title>คลังรางวัลและผลงาน | กลุ่มงานควบคุมโรคติดต่อ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">ค</div>
+        <div>
+          <strong>คลังผลงาน</strong>
+          <span>กลุ่มงานควบคุมโรคติดต่อ</span>
+        </div>
+      </div>
+
+      <nav class="main-nav" aria-label="เมนูหลัก">
+        <button class="nav-item active" data-view="overview"><span class="nav-icon">▦</span>ภาพรวม</button>
+        <button class="nav-item" data-view="works"><span class="nav-icon">✦</span>ผลงาน</button>
+        <button class="nav-item" data-view="awards"><span class="nav-icon">🏆</span>รางวัล</button>
+        <button class="nav-item" data-view="annual"><span class="nav-icon">▤</span>สรุปรายปี</button>
+        <button class="nav-item" data-view="mine"><span class="nav-icon">◎</span>ผลงานของฉัน</button>
+        <button class="nav-item" data-view="staff"><span class="nav-icon">♧</span>บุคลากรและงานรับผิดชอบ</button>
+        <button class="nav-item" data-view="connection"><span class="nav-icon">☁</span>เชื่อมต่อ Google Drive</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="storage-card">
+          <div class="storage-heading"><span>พื้นที่ต้นแบบ</span><strong id="storageText">0 MB</strong></div>
+          <div class="progress"><span id="storageBar"></span></div>
+          <small>ข้อมูลเก็บในเบราว์เซอร์ชั่วคราว</small>
+        </div>
+        <button class="sidebar-link" id="exportBtn"><span>⇩</span>ส่งออกข้อมูล</button>
+        <button class="sidebar-link" id="printAnnualBtn"><span>🖨</span>พิมพ์สรุปรายปี</button>
+        <label class="sidebar-link file-link"><span>⇧</span>นำเข้าข้อมูล<input id="importInput" type="file" accept="application/json" hidden></label>
+        <button class="sidebar-link" id="profileBtn"><span>⚙</span>ตั้งค่าผู้ใช้</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="breadcrumb"><span id="pageKicker">ภาพรวม</span><span class="slash">/</span><span>ปี 2568–2571</span></div>
+        <div class="top-actions">
+          <label class="global-search"><span>⌕</span><input id="globalSearch" type="search" placeholder="ค้นหาผลงาน รางวัล หรือบุคลากร..." /></label>
+          <button class="icon-button" id="helpBtn" title="คำแนะนำการใช้งาน">?</button>
+          <button class="profile-chip" id="profileChip"><span id="profileInitial">จ</span><span id="profileName">เจ้าหน้าที่</span><span class="chevron">⌄</span></button>
+        </div>
+      </header>
+
+      <div class="publication-notice" role="status">
+        เว็บสาธิตสาธารณะ: ข้อมูลที่เพิ่มและไฟล์แนบเก็บในเบราว์เซอร์นี้เท่านั้น ยังไม่แชร์กับเจ้าหน้าที่คนอื่นหรือ Google Drive โปรดอย่าบันทึกข้อมูลลับหรือเอกสารที่ไม่ควรเผยแพร่
+      </div>
+
+      <div class="page-body">
+        <section class="view active" id="view-overview"></section>
+        <section class="view" id="view-works"></section>
+        <section class="view" id="view-awards"></section>
+        <section class="view" id="view-annual"></section>
+        <section class="view" id="view-mine"></section>
+        <section class="view" id="view-staff"></section>
+        <section class="view" id="view-connection"></section>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"></div>
+  </div>
+  <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+  <script src="staff.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
